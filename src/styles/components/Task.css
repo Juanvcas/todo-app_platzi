@@ -1,0 +1,59 @@
+.task {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 4.2rem;
+	margin-top: 1rem;
+	padding: 0 1rem;
+	background-color: white;
+	border-radius: 2.1rem;
+	box-shadow: 0 0 0.3rem gray;
+}
+
+.task:nth-child(1) {
+	margin-top: 0;
+}
+
+.task_cont {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: auto;
+}
+
+.task_cont span,
+.task_close {
+	width: 2.4rem;
+	height: 2.4rem;
+	margin-right: 1rem;
+}
+
+.task_close {
+	margin-right: 0;
+}
+
+.task_cont svg,
+.task_close svg {
+	width: 100%;
+	height: 100%;
+	color: gainsboro;
+}
+
+/* COMPLETED */
+.completed {
+	background-color: gainsboro;
+}
+
+.completed .task_cont svg {
+	color: green;
+}
+
+.completed .task_cont h3 {
+	color: gray;
+	text-decoration: line-through;
+}
+
+.completed .task_close svg {
+	color: gray;
+}

@@ -1,0 +1,8 @@
+.list {
+	width: 100%;
+	height: auto;
+}
+
+.list ul {
+	list-style-type: none;
+}
