@@ -13,6 +13,7 @@ const TodoProvider = (props) => {
 
 	const { todos, saveTodos } = useLocalStorage('TODOApp_v1', initialData);
 	const [search, setSearch] = useState();
+	const [modal, setModal] = useState(false);
 
 	let searchList = todos;
 
@@ -26,7 +27,16 @@ const TodoProvider = (props) => {
 	}
 	return (
 		<TodoContext.Provider
-			value={{ todos, saveTodos, search, setSearch, searchList, initialData }}
+			value={{
+				todos,
+				saveTodos,
+				search,
+				setSearch,
+				searchList,
+				modal,
+				setModal,
+				initialData,
+			}}
 		>
 			{props.children}
 		</TodoContext.Provider>

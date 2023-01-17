@@ -8,6 +8,8 @@
 	border-radius: 50%;
 	background-color: dodgerblue;
 	box-shadow: 0 0 0.5rem gray;
+	cursor: pointer;
+	z-index: 10;
 }
 
 .addTaskButton svg {
