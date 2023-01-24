@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { TodoContext } from './context/TodoContext';
+import { TodoHeader } from './components/TodoHeader';
 import { Counter } from './components/Counter';
 import { Search } from './components/Search';
 import { List } from './components/List';
@@ -10,18 +11,16 @@ import { TodoForm } from './components/TodoForm';
 import './styles/App.css';
 
 function App() {
-	const { todos, saveTodos, searchList, modal } = useContext(TodoContext);
+	const { todos, saveTodos, setSearch, searchList, modal } =
+		useContext(TodoContext);
 	return (
 		<>
 			<main className='app'>
 				<section className='header-cont'>
-					<div className='app_header'>
-						<h1>
-							¡Good <span>Morning!</span>
-						</h1>
-						<Counter />
-						<Search />
-					</div>
+					<TodoHeader>
+						<Counter todos={todos} />
+						<Search setSearch={setSearch} />
+					</TodoHeader>
 				</section>
 				<section className='list-cont'>
 					<div className='app_list'>

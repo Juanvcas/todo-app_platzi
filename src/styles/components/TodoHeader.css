@@ -1,0 +1,16 @@
+.header-cont {
+	background-color: white;
+}
+
+.app_header,
+.app_list {
+	width: 90%;
+	max-width: 76.8rem;
+	height: auto;
+	margin: 0 auto;
+}
+
+.app_header {
+	padding-top: 4rem;
+	padding-bottom: 2.4rem;
+}

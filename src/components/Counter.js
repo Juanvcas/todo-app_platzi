@@ -1,10 +1,6 @@
-import { useContext } from 'react';
-import { TodoContext } from '../context/TodoContext';
 import '../styles/components/Counter.css';
 
-export const Counter = () => {
-	const { todos } = useContext(TodoContext);
-
+export const Counter = ({ todos }) => {
 	const completed = todos.filter((todo) => todo.completed).length;
 	const total = todos.length;
 
