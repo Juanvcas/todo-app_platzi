@@ -1,10 +1,6 @@
-import { useContext } from 'react';
-import { TodoContext } from '../context/TodoContext';
 import '../styles/components/TodoForm.css';
 
-export const TodoForm = () => {
-	const { todos, saveTodos, modal, setModal } = useContext(TodoContext);
-
+export const TodoForm = ({ todos, saveTodos, modal, setModal }) => {
 	const cancelTodo = () => {
 		setModal(!modal);
 	};

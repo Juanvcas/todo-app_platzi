@@ -1,9 +1,7 @@
-import { createContext, useState } from 'react';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useState } from 'react';
+import { useLocalStorage } from './useLocalStorage';
 
-const TodoContext = createContext();
-
-const TodoProvider = (props) => {
+export const useTodos = () => {
 	const initialData = [
 		{
 			task: '¡Add a task to begin!',
@@ -25,22 +23,14 @@ const TodoProvider = (props) => {
 	} else {
 		searchList = todos;
 	}
-	return (
-		<TodoContext.Provider
-			value={{
-				todos,
-				saveTodos,
-				search,
-				setSearch,
-				searchList,
-				modal,
-				setModal,
-				initialData,
-			}}
-		>
-			{props.children}
-		</TodoContext.Provider>
-	);
+	return {
+		todos,
+		saveTodos,
+		search,
+		setSearch,
+		searchList,
+		modal,
+		setModal,
+		initialData,
+	};
 };
-
-export { TodoContext, TodoProvider };

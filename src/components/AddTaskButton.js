@@ -1,11 +1,7 @@
-import { useContext } from 'react';
-import { TodoContext } from '../context/TodoContext';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
 import '../styles/components/AddTaskButton.css';
 
-export const AddTaskButton = () => {
-	const { modal, setModal } = useContext(TodoContext);
-
+export const AddTaskButton = ({ modal, setModal }) => {
 	const toggleModal = (e) => {
 		e.stopPropagation();
 		setModal(!modal);

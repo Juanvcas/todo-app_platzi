@@ -1,9 +1,9 @@
 import '../styles/components/List.css';
 
-export const List = (props) => {
+export const List = ({ children }) => {
 	return (
 		<div className='list'>
-			<ul>{props.children}</ul>
+			<ul>{children}</ul>
 		</div>
 	);
 };

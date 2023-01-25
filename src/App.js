@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { TodoContext } from './context/TodoContext';
+import { useTodos } from './hooks/useTodos';
 import { TodoHeader } from './components/TodoHeader';
 import { Counter } from './components/Counter';
 import { Search } from './components/Search';
@@ -11,8 +10,8 @@ import { TodoForm } from './components/TodoForm';
 import './styles/App.css';
 
 function App() {
-	const { todos, saveTodos, setSearch, searchList, modal } =
-		useContext(TodoContext);
+	const { todos, saveTodos, setSearch, searchList, modal, setModal } =
+		useTodos();
 	return (
 		<>
 			<main className='app'>
@@ -37,11 +36,16 @@ function App() {
 						</List>
 					</div>
 				</section>
-				<AddTaskButton />
+				<AddTaskButton modal={modal} setModal={setModal} />
 			</main>
 			{modal && (
-				<Modal>
-					<TodoForm />
+				<Modal modal={modal} setModal={setModal}>
+					<TodoForm
+						todos={todos}
+						saveTodos={saveTodos}
+						modal={modal}
+						setModal={setModal}
+					/>
 				</Modal>
 			)}
 		</>
